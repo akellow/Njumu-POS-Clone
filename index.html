@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCBPOS | Point of Sale</title>
+    <meta name="description" content="Explore MCBPOS, a point-of-sale system for retail, hospitality, butcheries, and restaurants. Book a demo to learn more." />
+    <meta name="theme-color" content="#0b2239" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="MCBPOS | Point of Sale" />
+    <meta property="og:description" content="Explore a point-of-sale system for retail, hospitality, butcheries, and restaurants." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      (() => {
+        const validThemes = ['blue', 'light', 'dark'];
+        let savedTheme = null;
+        try {
+          savedTheme = localStorage.getItem('theme-mode');
+          if (!savedTheme) {
+            const legacyTheme = localStorage.getItem('theme');
+            savedTheme = legacyTheme === 'light' ? 'light' : legacyTheme === 'dark' ? 'blue' : null;
+          }
+        } catch (error) {
+          console.warn('Theme preference could not be read.', error);
+        }
+
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        const theme = validThemes.includes(savedTheme) ? savedTheme : prefersLight ? 'light' : 'blue';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.classList.toggle('theme-light', theme === 'light');
+        document.documentElement.classList.toggle('theme-dark', theme === 'dark');
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=themes-v2" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie_light.min.js" integrity="sha384-Vtbz3QbtSBqleuQry6kQy5smig1gPZCXUoTFN7RmN9QW47xpEDsV/J1w0Pw0rDJu" crossorigin="anonymous" defer></script>
+    <script src="script.js?v=rotating-testimonials-theme-modes-v3" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">MCBPOS</div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-icon" aria-label="Current theme: Light blue. Switch to light theme" title="Current theme: Light blue. Switch to light theme" data-theme="blue">
+          <svg class="theme-icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z" /></svg>
+          <svg class="theme-icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" /></svg>
+          <svg class="theme-icon icon-blue" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 3a9 9 0 0 0 0 18V3Z" /></svg>
+        </button>
+        <a href="#features">Features</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-action" href="https://njumu.pos.sababisha.com/signin">Sign in</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-image-wrap">
+          <div class="hero-image" role="img" aria-label="Preview of the MCB point-of-sale dashboard">
+            <div class="pos-dashboard" aria-hidden="true">
+              <div class="pos-topbar">
+                <span class="pos-brand">MCB POS</span>
+                <span class="pos-preview-label">DASHBOARD PREVIEW</span>
+                <span class="pos-status"><i></i> Register open</span>
+              </div>
+              <div class="pos-content">
+                <div class="pos-catalog">
+                  <div class="pos-heading">
+                    <div><small>MONDAY, 12 AUGUST</small><h2>Products</h2></div>
+                    <span class="pos-search">⌕ &nbsp; Search products</span>
+                  </div>
+                  <div class="pos-products">
+                    <div class="pos-product"><span class="pos-product-icon">☕</span><strong>House Coffee</strong><small>Drinks</small><b>$3.50</b></div>
+                    <div class="pos-product"><span class="pos-product-icon">🥐</span><strong>Butter Croissant</strong><small>Bakery</small><b>$4.00</b></div>
+                    <div class="pos-product"><span class="pos-product-icon">🥗</span><strong>Garden Bowl</strong><small>Food</small><b>$8.50</b></div>
+                    <div class="pos-product"><span class="pos-product-icon">🧃</span><strong>Fresh Juice</strong><small>Drinks</small><b>$5.00</b></div>
+                  </div>
+                </div>
+                <aside class="pos-order">
+                  <div class="pos-order-title"><strong>Current order</strong><span>Order #1048</span></div>
+                  <div class="pos-order-item"><span>House Coffee <small>1 × $3.50</small></span><b>$3.50</b></div>
+                  <div class="pos-order-item"><span>Butter Croissant <small>2 × $4.00</small></span><b>$8.00</b></div>
+                  <div class="pos-total"><span>Total</span><strong>$11.50</strong></div>
+                  <div class="pos-checkout">Charge customer&nbsp; →</div>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-copy">
+          <h1>The Ultimate POS for Your Business</h1>
+          <p>
+            From managing inventory to quick transactions, our POS system is built to streamline your business operations and optimize your workflow
+          </p>
+          <button class="primary-btn" type="button" data-open-trial>Start Your Free Trial Today</button>
+        </div>
+      </section>
+
+      <section class="section-block intro-block">
+        <h2>What We Do</h2>
+        <p>
+          Our POS system provides seamless solutions for inventory management, order tracking,
+          customer engagement, and sales optimization.
+        </p>
+      </section>
+
+      <section class="features section-block" id="features">
+        <h2>Key Features</h2>
+
+        <div class="feature-carousel" role="region" aria-label="Key features" aria-roledescription="carousel">
+          <div class="feature-pages" aria-live="off">
+            <div class="feature-page" data-feature-page>
+              <div class="feature-grid">
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Keep stock levels organized, see what is moving, and spot items that need replenishing before they run out.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z" /><path d="m4.5 7.5 7.5 4 7.5-4M12 12v9" /></svg></div>
+                  <h3>Inventory Management</h3>
+                  <p>Manage stock with ease, ensuring you never run out of essential items..</p>
+                </article>
+
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Follow orders from entry through completion so your team can stay organized and serve customers efficiently.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></div>
+                  <h3>Order Tracking</h3>
+                  <p>Efficient management of orders to ensure timely service.</p>
+                </article>
+
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Use tailored promotions and customer feedback to support stronger customer engagement and loyalty.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z" /></svg></div>
+                  <h3>Customer Engagement</h3>
+                  <p>Boost loyalty with tailored promotions and feedback.</p>
+                </article>
+              </div>
+            </div>
+            <div class="feature-page" data-feature-page hidden>
+              <div class="feature-grid">
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Review sales performance and customer trends to understand how your business is doing and make informed decisions.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V11m5 9V5m6 15v-7m5 7V8" /></svg></div>
+                  <h3>Analytics</h3>
+                  <p>Gain insights into sales and customer behavior to optimize your strategies.</p>
+                </article>
+
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Find support for questions about using MCBPOS and managing everyday tasks.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13v-2a8 8 0 0 1 16 0v2" /><path d="M4 12h3v7H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 1-2Zm16 0h-3v7h2a2 2 0 0 0 2-2v-3a2 2 0 0 0-1-2ZM17 19a5 5 0 0 1-5 3" /></svg></div>
+                  <h3>Customer Support</h3>
+                  <p>24/7 support for all your business needs.</p>
+                </article>
+
+                <article class="feature-card" tabindex="0" role="button" aria-haspopup="dialog" data-feature-detail="Give customers convenient ways to pay by supporting flexible payment options at checkout.">
+                  <div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18m-14 5h4" /></svg></div>
+                  <h3>Flexible Payment Options</h3>
+                  <p>Accept various payment methods for convenience.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="feature-carousel-controls">
+            <button class="feature-carousel-arrow" type="button" aria-label="Show previous features" data-feature-prev>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+            </button>
+            <div class="feature-pagination" aria-label="Feature pages">
+              <button type="button" class="feature-page-tab is-active" aria-label="Show features 1 through 3" aria-current="true" data-feature-tab="0"></button>
+              <button type="button" class="feature-page-tab" aria-label="Show features 4 through 6" data-feature-tab="1"></button>
+            </div>
+            <button class="feature-carousel-arrow" type="button" aria-label="Show next features" data-feature-next>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="section-demo-cta" aria-label="Book a product demo">
+        <p>Want to see MCBPOS in action?</p>
+        <a class="primary-btn" href="#demo-form">Book a demo</a>
+      </section>
+
+      <section class="testimonials section-block" id="testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">What Our Customers Say</h2>
+        <div class="testimonial-carousel" role="region" aria-label="Customer testimonials" aria-roledescription="carousel">
+          <button class="testimonial-arrow testimonial-prev" type="button" aria-label="Show previous testimonials" data-testimonial-prev>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+          </button>
+          <div class="testimonial-pages" aria-live="polite">
+            <div class="testimonial-page" data-testimonial-page>
+              <article class="testimonial-card">
+                <blockquote>“Our operations have never been more efficient! We love how easy it is to manage our inventory.”</blockquote>
+                <p class="testimonial-author">- John D.</p>
+              </article>
+              <article class="testimonial-card">
+                <blockquote>“This POS system is perfect for our team. We can handle transactions and manage orders quickly.”</blockquote>
+                <p class="testimonial-author">- Sarah P.</p>
+              </article>
+            </div>
+            <div class="testimonial-page" data-testimonial-page hidden>
+              <article class="testimonial-card">
+                <blockquote>“A game changer for our business! The inventory tracking is top-notch.”</blockquote>
+                <p class="testimonial-author">- Mike R.</p>
+              </article>
+              <article class="testimonial-card">
+                <blockquote>“Great customer support and easy to use. Highly recommended!”</blockquote>
+                <p class="testimonial-author">- Emily T.</p>
+              </article>
+            </div>
+          </div>
+          <button class="testimonial-arrow testimonial-next" type="button" aria-label="Show next testimonials" data-testimonial-next>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+          </button>
+        </div>
+        <div class="testimonial-pagination" aria-label="Testimonial pages">
+          <button type="button" class="testimonial-page-tab is-active" aria-label="Show testimonial page 1" aria-current="true" data-testimonial-tab="0"></button>
+          <button type="button" class="testimonial-page-tab" aria-label="Show testimonial page 2" data-testimonial-tab="1"></button>
+        </div>
+      </section>
+
+      <section class="cta section-block">
+        <h2>Interested? Sign Up for a Free Demo</h2>
+
+        <form class="demo-form" id="demo-form">
+          <div class="form-field">
+            <label for="demo-name">Name</label>
+            <input id="demo-name" type="text" name="name" autocomplete="name" required />
+          </div>
+          <div class="form-field">
+            <label for="demo-email">Email</label>
+            <input id="demo-email" type="email" name="email" autocomplete="email" required />
+          </div>
+
+
+          <button type="submit">Request a Demo</button>
+        </form>
+     
+
+        <h3>About MCB</h3>
+        <p>
+          Founded with the mission to empower businesses, MCB has been at the forefront of innovative solutions. Our commitment to excellence and customer satisfaction has made us a trusted partner in business operations.<br>
+
+         <br> Join us as we continue to revolutionize the way businesses manage their processes and achieve growth.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <h2>Contact Us</h2>
+      <p> For any inquiries or support, feel free to get in touch with us through the following platforms:</p>
+      <ul class="social-links" aria-label="Social profiles, links coming soon">
+        <li><span class="social-placeholder" role="img" aria-label="X profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.5 22H2.3l7.3-8.4L1.8 2h6.5l4.4 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z" /></svg></span></li>
+        <li><span class="social-placeholder" role="img" aria-label="Facebook profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8h3.4Z" /></svg></span></li>
+        <li><span class="social-placeholder" role="img" aria-label="LinkedIn profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.2 8.4H2V22h3.2V8.4ZM3.6 2a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8ZM22 14.2c0-4.1-2.2-6-5.1-6a4.4 4.4 0 0 0-3.9 2.1V8.4H9.8V22H13v-6.7c0-1.8.3-3.6 2.6-3.6s2.3 2.1 2.3 3.7V22H22v-7.8Z" /></svg></span></li>
+        <li><span class="social-placeholder" role="img" aria-label="Instagram profile link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg></span></li>
+        <li><span class="social-placeholder" role="img" aria-label="WhatsApp contact link coming soon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.5-4.7a8.5 8.5 0 1 1 16-4.1Z" /><path d="M8.8 8.2c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.4l.7 1.7c.1.2.1.4 0 .5l-.5.7c-.2.2-.2.4 0 .6.4.7 1 1.3 1.7 1.7.2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .3-.2 1.1-.7 1.5-.4.4-1 .6-1.6.5-.5-.1-1.2-.3-2.1-.7-1.4-.6-2.4-1.6-3.2-2.7-.8-1.1-1.1-2-.9-2.8.1-.5.6-1.1 1.1-1.1Z" /></svg></span></li>
+      </ul>
+
+      <div class="copyright">© <span id="current-year"></span> MCB POS System | Application Areas: Retail, Hospitality, Butcheries, Restaurants</div>
+    </footer>
+    <a class="mobile-demo-cta" href="#demo-form">Book a demo</a>
+    <dialog class="trial-dialog" id="trial-dialog" aria-labelledby="trial-dialog-title">
+      <div class="trial-dialog-header">
+        <div>
+          <span class="trial-eyebrow">GET STARTED</span>
+          <h2 id="trial-dialog-title">Start Your Free Trial</h2>
+          <p>Tell us a little about your business to get started.</p>
+        </div>
+        <button class="trial-close-icon" type="button" data-close-trial aria-label="Close form">&times;</button>
+      </div>
+
+      <form class="trial-form" id="trial-form">
+        <div class="form-field">
+          <label for="trial-name">Name</label>
+          <input id="trial-name" type="text" name="name" autocomplete="name" placeholder="Enter your name" required />
+        </div>
+        <div class="form-field">
+          <label for="trial-email">Email</label>
+          <input id="trial-email" type="email" name="email" autocomplete="email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-field">
+          <label for="trial-business">Business Name</label>
+          <input id="trial-business" type="text" name="businessName" autocomplete="organization" placeholder="Enter your business name" required />
+        </div>
+        <div class="form-field">
+          <label for="trial-phone">Phone Number</label>
+          <input id="trial-phone" type="tel" name="phone" autocomplete="tel" placeholder="Enter your phone number" required />
+        </div>
+        <p class="trial-status" role="status" aria-live="polite"></p>
+        <button class="trial-submit" type="submit">Submit</button>
+      </form>
+
+      <button class="trial-close-button" type="button" data-close-trial>Close</button>
+    </dialog>
+    <dialog class="feature-detail-dialog" id="feature-detail-dialog" aria-labelledby="feature-detail-title">
+      <button class="feature-detail-close" type="button" aria-label="Close feature details" data-close-feature>&times;</button>
+      <span class="trial-eyebrow">KEY FEATURE</span>
+      <h2 id="feature-detail-title"></h2>
+      <p class="feature-detail-copy" id="feature-detail-copy"></p>
+      <button class="feature-detail-done" type="button" data-close-feature>Got it</button>
+    </dialog>
+  </body>
+</html>
